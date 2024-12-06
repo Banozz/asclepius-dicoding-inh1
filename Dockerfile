@@ -1,6 +1,5 @@
-FROM node:18-alpine  
+FROM node:18.16.1
 WORKDIR /app
-RUN apk add --no-cache libc6-compat
 COPY package*.json ./  
 RUN npm install 
 COPY . .  
