@@ -9,7 +9,7 @@ async function predictClassification(model, image) {
             .expandDims()
             .toFloat()
  
-        const classes = ['Kanker', 'Non-kanker'];
+        const classess = ['Kanker', 'Non-kanker'];
 
         const suggestionArr = ['Segera periksa ke dokter!', 'Penyakit kanker tidak terdeteksi.']
  
@@ -17,15 +17,15 @@ async function predictClassification(model, image) {
         const score = await prediction.data();
         const confidenceScore = Math.max(...score) * 100;
  
-        const label = confidenceScore > 99 ? classes[0] : classes[1];
+        const label = confidenceScore > 99 ? classess[0] : classess[1];
  
         let suggestion;
  
-        if(label === classes[0]) {
+        if(label === classess[0]) {
            suggestion = suggestionArr[0];
         }
  
-        if(label === classes[1]) {
+        if(label === classess[1]) {
             suggestion = suggestionArr[1];
         }
  
