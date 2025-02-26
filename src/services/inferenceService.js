@@ -9,7 +9,7 @@ async function predictClassification(model, image) {
             .expandDims()
             .toFloat()
  
-        const classes = ['Cancer', 'Non-cancer'];
+        const classes = ['Kanker', 'Non-kanker'];
 
         const suggestionArr = ['Segera periksa ke dokter!', 'Penyakit kanker tidak terdeteksi.']
  
